@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import url("cw_designs.css");
 
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
@@ -18,7 +17,7 @@
 
 
 /* Import Basic Design Styles  */
-
+@import url("cw_designs.css");
  
 
 /* ===============================
@@ -26,14 +25,11 @@
    ===============================
 */
 nav#bottom {
-  height:100%;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: center;
   margin: auto;
-  -webkit-display: flex;
-  -webkit-flex-direction: row;
-  flex-flow: row wrap;
+ display: -webkit-flex;
 }
  
   nav#bottom ul {
@@ -50,75 +46,67 @@ nav#bottom {
     background-color: rgb(51, 51, 51);
   }
  
-  aside, article>img, #spotlight{
+  aside, article>p>img, #spotlight{
     display: none;
   }
  
   nav#top ul {
     display: flex;
-    flex-wrap: row wrap;
     display: -webkit-flex;
     -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
   }
  
   nav#top ul li {
     font-size: 2.2em;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 130px;
+    flex: 1 1 130px;
   }
  
   nav#top ul li:nth-of-type(1) {
-    background: url(cw_image01.png);
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-position: center;
+    background: url(cw_image01.png) no-repeat;
+     width: 100%;
+     ;
   }
     
     nav#top ul li:nth-of-type(2) {
-    background: url(cw_image02.png);
-     background-repeat: no-repeat;
-     background-size: cover;  
-     background-position: center;
+    background: url(cw_image02.png) no-repeat;
+    width: 100%; 
+     ;
   }
      nav#top ul li:nth-of-type(3) {
-     background: url(cw_image03.png);
-     background-repeat: no-repeat;
-     background-size: cover;  
-     background-position: center;
+     background: url(cw_image03.png) no-repeat;
+    width: 100%; 
   }
      nav#top ul li:nth-of-type(4) {
-     background: url(cw_image04.png);
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-position: center;
+     background: url(cw_image04.png) no-repeat;
+     width: 100%;
   }
      nav#top ul li:nth-of-type(5) {
-     background: url(cw_image05.png);
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-position: center;
+     background: url(cw_image05.png) no-repeat;
+     width: 100%;
+     ;
   }
      nav#top ul li:nth-of-type(6) {
-     background: url(cw_image06.png);
-     background-repeat: no-repeat;
-     background-size: cover;  
-     background-position: center;
+     background: url(cw_image06.png) no-repeat;
+     width: 100%;
+   
+     ;
   }
  
   p#links {
     display: flex;
-    flex-flow: nowrap;
+    display: -webkit-flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    justify-content: space-around;
   }
- 
-    p#links a {
+
+  p#links a {
     color: white;
     background-color: rgb(220, 27, 27);
     border-radius: 20px;
     padding: 10px;
-    margin: 0;
     text-decoration: none;
-    align-content: space-between;
   }
 }
 
@@ -133,40 +121,33 @@ nav#bottom {
     flex-flow: row wrap;
   }
 
-    p#links a {
-    display: none;
-  }
- article {
+    
+ body>article {
     flex-grow: 2;
     flex-shrink: 1;
     flex-basis: 400px;
   }
  
-aside {
+body>aside {
     flex-grow: 1;
     flex-shrink: 2;
     flex-basis: 200px;
   }
+  
  
-#top nav.horizontal ul {
-    display: flex;  
-    line-height: 50px;
+nav#top ul li {
+  background-color: rgb(51, 51, 51); 
     height: 50px;
-    background-color: rgb(51, 51, 51);
+    display: block;
     justify-content: center;
     align-items: center;
+    flex: 1 1 80px;
   }
- 
-#top nav ul li {
-    max-height: 50px;
-    flex-shrink: 1;
-    flex-grow: 1;
+
+  p#links {
+    display: none;
   }
 }
 
  
 
-/* ============================================
-    Tablet and Desktop Devices: 481px or more 
-   ============================================
-*/
